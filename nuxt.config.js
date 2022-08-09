@@ -20,7 +20,10 @@ export default {
   css: [
 	'assets/css/reset.css'
   ],
-
+  generate: {
+    dir: 'public'
+  }
+,
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
 
