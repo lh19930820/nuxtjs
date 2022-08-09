@@ -2,7 +2,7 @@
 	<footer class="footer" id="contact">
 		<div class="footer__inner">
 			<div class="footer__left">
-				<img class="footer__logo" src="~/assets/images/white-logo.svg" alt="logo">
+				<nuxt-img class="footer__logo" src="/white-logo.svg" alt="logo" placeholder />
 				<Social/>
 			</div>
 			<div class="footer__right">

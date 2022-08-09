@@ -45,7 +45,13 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-
+  buildModules: [
+    // Next Image module https://image.nuxtjs.org/components/nuxt-img
+    ['@nuxt/image', {
+        provider: 'static',
+        dir: "assets/images",
+    }],
+],
   i18n: {
 	locales: [
 	  {

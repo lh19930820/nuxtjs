@@ -2,7 +2,8 @@
 <template>
 	<header class="header" id="js-header" v-bind:class="{hasBackGround: hasBG }">
 		<a class="header__logo" href="/">
-			<img src="~/assets/images/white-logo.svg" alt="">
+			<nuxt-img src="/white-logo.svg" alt="logo" placeholder />
+			<!-- <img src="~/assets/images/white-logo.svg" alt=""> -->
 		</a>
 		<MenuBugger/>
 		<div class="header__direction" id="js-menucontent">
