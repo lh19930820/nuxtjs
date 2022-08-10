@@ -28,7 +28,7 @@
 					</div>
 				</div>
 				<div class="footer__item">
-				<h3 class="footer__ttl">{{$t('subscribe.title')}}</h3>
+					<h3 class="footer__ttl">{{$t('subscribe.title')}}</h3>
 					<p class="footer__txt">{{$t('subscribe.caption')}}</p>
 					<Form/>
 				</div>
