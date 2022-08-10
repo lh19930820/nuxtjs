@@ -119,6 +119,12 @@
 		}
 		&__info-img{
 			margin-right: 0.8rem;
+			@media screen and (max-width: 768px) {
+				img{
+					width: 4rem;
+					height: 4rem;
+				}
+			}
 		}
 		&__info{
 			display: flex;
