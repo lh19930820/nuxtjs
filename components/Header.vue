@@ -3,7 +3,6 @@
 	<header class="header" ref="header" id="js-header" :class="{hasBackGround: hasBG }">
 		<a class="header__logo" href="/">
 			<nuxt-img src="/white-logo.svg" alt="logo" placeholder />
-			<!-- <img src="~/assets/images/white-logo.svg" alt=""> -->
 		</a>
 		<MenuBugger :showMenu="showMenu" @func="showMenu = !showMenu" />
 		<div class="header__direction" :class="{active: showMenu}" id="js-menucontent">
