@@ -1,6 +1,6 @@
 
 <template>
-	<header class="header" id="js-header" v-bind:class="{hasBackGround: hasBG }">
+	<header class="header" ref="refHeader" id="js-header" v-bind:class="{hasBackGround: hasBG }">
 		<a class="header__logo" href="/">
 			<nuxt-img src="/white-logo.svg" alt="logo" placeholder />
 			<!-- <img src="~/assets/images/white-logo.svg" alt=""> -->
@@ -24,7 +24,8 @@ import MenuBugger from './MenuBugger.vue';
  export default {
     data: function () {
         return {
-            hasBG: false
+            hasBG: false,
+			showMenu: false
         };
     },
     mounted() {
@@ -42,7 +43,7 @@ import MenuBugger from './MenuBugger.vue';
         },
         handleClick: function (refName) {
             const element = document.getElementById(refName);
-            var headerHeight = document.getElementById("js-header").offsetHeight;
+            var headerHeight = $this.refs.refHeader.offsetHeight;
             if (element.offsetTop) {
                 window.scrollTo({
                     top: element.offsetTop - headerHeight,
