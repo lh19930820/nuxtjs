@@ -1,5 +1,5 @@
 <template>
-	<button class="back-to-top"  @click="handleClick">
+	<button class="back-to-top"  @click="handleClick" aria-label="to top">
 		<img v-bind:class="{ scroll: scTop>300 }" class="game-item__img" src="~/assets/images/arrow-down.svg" alt="">
 	</button>
 </template>

@@ -87,7 +87,6 @@ export default {
 	},
 
     methods: {
-
 		handleMenuBugger: function () {
 			this.isShow=!this.isShow;
 			document.body.classList.toggle('hide-scroll')

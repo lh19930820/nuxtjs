@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="about-us__inner">
 				<div class="about-us__content">
-					<h3 class="c-title">{{$t('about.title')}}</h3>
+					<h2 class="c-title">{{$t('about.title')}}</h2>
 					<p class="about-us__description">{{$t('about.text')}}</p>
 					<div class="status">
 						<div class="status-item">

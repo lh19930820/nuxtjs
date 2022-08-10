@@ -112,7 +112,7 @@
 				height: 50%;
 				left: 25%;
 				top: 25%;
-				background: #f6f6f6;
+				background: #ddd;
 			}
 			&:hover{
 				box-shadow:0px 4px 10px rgba(0, 0, 0, 0.35);

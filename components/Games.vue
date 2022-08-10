@@ -4,7 +4,7 @@
 		<p class="games__decs">{{$t('games.caption')}}</p>
 		<ul class="games__list">
 			<li class="game-item" v-for="game in games" :key="game.id">
-				<a class="game-item__link" href="">
+				<a class="game-item__link" href="#">
 					<img class="game-item__img" :src="require(`~/assets/images/${game.image}`)" alt="">
 					<div class="game-item__info">
 						<p class="game-item__ttl">{{game.title}}</p>
