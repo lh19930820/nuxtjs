@@ -20,7 +20,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
 	'assets/css/reset.css',
-	'assets/css/lang.css'
   ],
   generate: {
     dir: 'public'
@@ -39,16 +38,17 @@ export default {
 		  lazy: true,
 		  langDir: "lang/",
 		  locales: [
-			{
-			  code: "en",
-			  name: "English",
-			  file: "en.json"
-			},
+
 			{
 			  code: "vn",
 			  name: "Vietnamese",
 			  file: "vn.json"
-			}
+			},
+			{
+				code: "en",
+				name: "English",
+				file: "en.json"
+			  }
 		  ]
 		}
 	  ]

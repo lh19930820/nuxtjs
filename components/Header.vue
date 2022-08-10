@@ -92,13 +92,18 @@ import MenuBugger from './MenuBugger.vue';
 		}
 		&__lang{
 			margin-left: 8.4rem;
-
+			@media screen and (max-width: 1199px) {
+				margin-left: 6rem
+			}
+			@media screen and (max-width: 991px) {
+				margin-left: 5rem
+			}
 			@media screen and (max-width: 768px) {
 				position: absolute;
+				margin-left: 0;
 				top: 4.8rem;
 				left: 16px;
-				margin-left: 0;
-				width: 8rem;
+				width: 80px;
 				&.scrol{
 					top: 2rem;
 					transition-duration: 0.2s;

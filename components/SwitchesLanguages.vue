@@ -1,11 +1,16 @@
 <template>
     <div class="lang">
-		<button class="lang__btn lang__btn-active" @click="handleSelectLang">
-			<span class="flag" :class="[selectedValue]"></span>
+		<button class="lang__btn lang__btn-active" @click="showSelectLang = !showSelectLang">
+			<span class="flag" :class="[$i18n.locale]"></span>
 		</button>
 		<ul class="lang__list" :class="{ show: showSelectLang }" >
-			<li class="lang__item" @click="onChange(selectedValue)" v-for="locale in $i18n.locales" :class="` ${selectedValue === locale.code? 'active' : ''}`" :key="locale.code" :selected="selectedValue === locale.code">
-			<span class="flag" :class="[locale.code]"></span>{{ locale.name }}
+			<li
+				@click="showSelectLang = !showSelectLang"
+				v-for="locale in $i18n.locales"
+				:key="locale.code">
+				<nuxt-link :class="` ${$i18n.locale === locale.code? 'active' : ''}`" class="lang__item" :to="switchLocalePath(locale.code)">
+					<span class="flag" :class="[locale.code]"></span>{{ locale.name }}
+				</nuxt-link>
 			</li>
 		</ul>
     </div>
@@ -15,20 +20,7 @@
 export default {
     data() {
         return {
-            selectedValue: '',
 			showSelectLang: false,
-        }
-    },
-     mounted () {
-        this.selectedValue = this.$i18n.locale;
-    },
-     methods: {
-		handleSelectLang: function () {
-			this.showSelectLang=!this.showSelectLang;
-		},
-        onChange(event) {
-			console.log(event)
-            this.$router.replace(this.switchLocalePath(event));
         }
     }
 }
@@ -39,6 +31,7 @@ export default {
 		width: 34px;
 		height: 34px;
 		display: inline-block;
+		flex-shrink: 0;
 		&.vn{
 			background-position: -4px -4px;
 		}
@@ -50,29 +43,23 @@ export default {
 		width: 68px;
 		height: 4rem;
 		position: relative;
-		@media screen and (max-width: 1199px) {
-			margin-left: 6rem
-		}
-		@media screen and (max-width: 991px) {
-			margin-left: 5rem
-		}
 		@media screen and (max-width: 768px) {
-			width: 8rem;
-			margin-left: 0;
-			img{
-				width: 2.7rem;
-			}
+			width: 80px;
 		}
 
 		&__list{
 			display: none;
-			width: 156px;
 			right: 0;
 			background: #fff;
 			position: absolute;
 			border: 1px solid #EEEEEE;
 			border-radius: 0.8rem;
-			padding:0.3rem 0.8rem;
+			padding: 0.3rem 0.8rem;
+			margin-top: 4px;
+			@media screen and (max-width: 768px) {
+				right: auto;
+				left: 0;
+			}
 			&.show{
 				display: block;
 			}
@@ -81,17 +68,22 @@ export default {
 			display: flex;
 			align-items: center;
 			font-weight: 700;
-			font-size: 1rem;
+			font-size: 10px;
 			line-height: 1.8;
-			padding-left: 3.5rem;
+			padding: 2px 0 2px 35px;
+			color: #000;
+			text-decoration: none;
+			&~.lang__item{
+				border-top: solid 1px #C4C4C4;
+			}
 			&.active{
 				&:before{
 					content: "";
 					position: absolute;
-					width: 20px;
-					height: 15px;
-					border-left: solid 1px #000;
-					border-bottom: solid 1px #000
+					left: 8px;
+					width: 24px;
+					height: 24px;
+					background: url('~assets/images/check.svg') center center no-repeat;
 				}
 			}
 			span{
@@ -101,19 +93,19 @@ export default {
 		.lang__btn-active{
 			background: none;
 			position: relative;
-			height: 4rem;
+			height: 40px;
 			&:before{
 				content: "";
 				position: absolute;
 				right: 6px;
 				top: 50%;
 				transform: translateY(-50%);
-				border-top: solid .5rem #fff;
-				border-left: solid .5rem transparent;
-				border-right: solid .5rem transparent;
+				border-top: solid 5px #fff;
+				border-left: solid 5px transparent;
+				border-right: solid 5px transparent;
 				@media screen and (max-width: 768px) {
 					border-top-color: #000;
-					right: 1.9rem
+					right: 12px
 				}
 			}
 		}
@@ -127,7 +119,7 @@ export default {
 		&__btn{
 			padding: 3px;
 			background-color: #fff;
-			height: 4rem;
+			height: 40px;
 			width: 100%;
 			border: none;
 			display: flex;
@@ -135,10 +127,9 @@ export default {
 			border-radius: 8px;
 			cursor: pointer;
 			@media screen and (max-width: 768px) {
-				padding: 0.3rem 3.8rem 0.3rem 1.4rem;
+				padding: 3px 38px 3px 14px;
 				background: #F6F6F6;
 				border: 1px solid #AFAFAF;
-				border-radius: .8rem;
 			}
 		}
 	}
