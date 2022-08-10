@@ -1,7 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  ssr: true,
+  target: 'static',
   head: {
-    title: 'test-fourtech1',
+    title: 'Test Fourtech 2022',
     htmlAttrs: {
       lang: 'en'
     },

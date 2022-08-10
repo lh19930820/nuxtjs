@@ -1,6 +1,6 @@
 <template>
     <div class="lang" v-click-outside="handlerClose">
-		<button class="lang__btn" @click="showSelectLang = !showSelectLang">
+		<button class="lang__btn" @click="showSelectLang = !showSelectLang" aria-label="lang">
 			<span class="flag" :class="[$i18n.locale]"></span>
 		</button>
 		<ul class="lang__list" :class="{ show: showSelectLang }" >

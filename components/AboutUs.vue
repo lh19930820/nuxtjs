@@ -45,8 +45,8 @@
 				</div>
 			</div>
 			<div class="map">
-				<nuxt-img  class="map__person" src="/illustrator.png" alt="About Us" placeholder />
-				<nuxt-img  class="map__pin" src="/pin-map.png" alt="About Us" placeholder />
+				<nuxt-img format="webp" class="map__person" src="/illustrator.png" alt="About Us" placeholder />
+				<nuxt-img format="webp" class="map__pin" src="/pin-map.png" alt="About Us" placeholder />
 			</div>
 		</div>
 	</section>

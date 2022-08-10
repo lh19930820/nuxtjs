@@ -12,7 +12,7 @@
 				</div>
 			</div>
 			<div class="mv__img" >
-				<nuxt-img src="/mv-fairy.png" alt="" placeholder />
+				<nuxt-img format="webp" src="/mv-fairy.png" alt="" placeholder />
 			</div>
 		</div>
 	</section>
