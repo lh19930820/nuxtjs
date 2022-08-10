@@ -7,14 +7,14 @@
 			</div>
 			<div class="footer__right">
 				<div class="footer__item">
-					<h3 class="footer__ttl">Address</h3>
+					<h3 class="footer__ttl">{{$t('address.title')}}</h3>
 					<div class="footer__info">
 						<div class="footer__info-img">
 							<img src="~/assets/images/location.svg" alt="">
 						</div>
 						<div class="footer__txt">
 							<p>Valletta Buildings, South Street, Valletta - VLT 1103 Malta, US</p>
-							<p>20 Phan Dang Luu street, Hai Chau District, Danang city, Vietnam</p>
+							<p>{{$t('address.location')}}</p>
 						</div>
 					</div>
 					<div class="footer__info">
@@ -22,14 +22,14 @@
 							<img src="~/assets/images/mobile.svg" alt="">
 						</div>
 						<div class="footer__txt">
-							<p class="pc"><span class="address__phone">(+1) 555-0108-000</span> or <span class="address__phone">(+236) 555-0108</span></p>
-							<p class="sp"><a href="tel:(+1) 555-0108-000" class="address__phone">(+1) 555-0108-000</a> or <a href="tel:(+236) 555-0108" class="address__phone">(+236) 555-0108</a></p>
+							<p class="pc"><span class="address__phone">(+1) 555-0108-000</span> {{$t('address.or')}} <span class="address__phone">(+236) 555-0108</span></p>
+							<p class="sp"><a href="tel:(+1) 555-0108-000" class="address__phone">(+1) 555-0108-000</a> {{$t('address.or')}} <a href="tel:(+236) 555-0108" class="address__phone">(+236) 555-0108</a></p>
 						</div>
 					</div>
 				</div>
 				<div class="footer__item">
-				<h3 class="footer__ttl">Subscribe</h3>
-					<p class="footer__txt">Subscribe to our newsletter and be the first to know about our updates</p>
+				<h3 class="footer__ttl">{{$t('subscribe.title')}}</h3>
+					<p class="footer__txt">{{$t('subscribe.caption')}}</p>
 					<Form/>
 				</div>
 			</div>

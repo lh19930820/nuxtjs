@@ -2,7 +2,7 @@
 <template>
 	<section class="partner" id="partners">
 		<div  class="partner__inner">
-		<h3 class="partner__ttl c-title">Our Partners</h3>
+		<h3 class="partner__ttl c-title">{{$t('partners.title')}}</h3>
 			<VueSlickCarousel  v-bind="settings">
 				<a href="#" target="_blank" v-for="partner in partners" :key="partner.id" class="partner__item">
 					<img :src="require(`~/assets/images/${partner.logo}`)" :alt="partner.alt">

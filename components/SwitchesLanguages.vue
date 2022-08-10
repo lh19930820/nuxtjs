@@ -1,45 +1,25 @@
 <template>
-	<div class="lang">
-		<button class="lang__btn lang__btn-active">
-			<span><img src="~assets/images/us.png"/></span>
-			</button>
-		<ul class="lang__list" >
-			<li class="lang__item" >
-				<button class="lang__btn">en</button>
-				<button class="lang__btn">vn</button>
-			</li>
-		</ul>
-	</div>
+    <div class="lang">
+             <select v-model="selectedValue" @change="onChange(selectedValue)">
+                <option v-for="locale in $i18n.locales" :value="locale.code" :key="locale.code" :selected="selectedValue === locale.code">{{ locale.name }}</option>
+            </select>
+    </div>
 </template>
 <script>
-
 export default {
-	// data() {
-	// 	const langueges = this.$store.app.i18n.availableLocales.filter((lang)=>lang!==this.$store.app.i18n.locale);
-	// 	return {
-	// 		showSelectLang: false,
-	// 		// langueges,
-	// 		// selectedLang: this.$store.app.i18n.locale
-	// 	}
-	// },
-    // methods: {
-	// 	handleSelectLang: function () {
-	// 		this.showSelectLang=!this.showSelectLang;
-	// 	},
-	// 	changeLang (lang) {
-	// 		//mutate 'locale' in store
-	// 		this.$store.commit('SET_LANG', lang)
-	// 		//re-route to the current page but with the selected language in a query string
-	// 		this.$router.push({ path: `${this.$router.currentRoute.path}?lang=${lang}` })
-	// 		this.selectedLang = lang;
-	// 		this.langueges=this.$store.app.i18n.availableLocales.filter((item)=>item!==lang)
-	// 		this.showSelectLang=!this.showSelectLang;
-
-	// 	}
-    // },
-	// components: {
-	// 	FlagIcon
-	// }
+    data() {
+        return {
+            selectedValue: ''
+        }
+    },
+     mounted () {
+        this.selectedValue = this.$i18n.locale;
+    },
+     methods: {
+        onChange(event) {
+            this.$router.replace(this.switchLocalePath(event));
+        }
+    }
 }
 </script>
 <style lang="scss">

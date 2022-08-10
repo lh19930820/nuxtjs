@@ -3,23 +3,19 @@
 		<div class="coundown-time"  v-if="distance>0">
 			<div class="coundown-time__item">
 				<span class="coundown-time__day font-play">{{d}}</span>
-				<!-- {{$t('coundown.days')}} -->
-				Days
+				{{$t('coundown.days')}}
 			</div>
 			<div class="coundown-time__item">
 				<span class="coundown-time__h font-play">{{h}}</span>
-				<!-- {{$t('coundown.hours')}} -->
-				Hours
+				{{$t('coundown.hours')}}
 			</div>
 			<div class="coundown-time__item">
 				<span class="coundown-time__m font-play">{{m}}</span>
-				<!-- {{$t('coundown.minutes')}} -->
-				Minutes
+				{{$t('coundown.minutes')}}
 			</div>
 			<div class="coundown-time__item">
 				<span class="coundown-time__s font-play">{{s}}</span>
-				<!-- {{$t('coundown.second')}} -->
-				Second
+				{{$t('coundown.second')}}
 			</div>
 		</div>
 		<div class="time-out" v-else>Dummy text</div>

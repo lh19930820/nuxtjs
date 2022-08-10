@@ -1,7 +1,7 @@
 <template>
 	<section class="games" id="games">
-		<h3 class="games__ttl c-title">Our Games</h3>
-		<p class="games__decs">As a pioneer of mobile app gamification, we take pride in originality and individuality, providing global players with state-of-the-art games that feature splendid storylines, sensational sound effects and magnificent animation that never cease to impress.</p>
+		<h3 class="games__ttl c-title">{{$t('games.title')}}</h3>
+		<p class="games__decs">{{$t('games.caption')}}</p>
 		<ul class="games__list">
 			<li class="game-item" v-for="game in games" :key="game.id">
 				<a class="game-item__link" href="">

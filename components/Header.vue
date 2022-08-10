@@ -8,10 +8,10 @@
 		<MenuBugger/>
 		<div class="header__direction" id="js-menucontent">
 			<ul class="header__nav">
-				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('about-us')" href="#about-us">ABOUT US</a></li>
-				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('games')" href="#games">GAMES</a></li>
-				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('partners')" href="#partners">PARTNERS</a></li>
-				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('contact')" href="#contact">CONTACT US</a></li>
+				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('about-us')" href="#about-us">{{$t('nav.about')}}</a></li>
+				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('games')" href="#games">{{$t('nav.games')}}</a></li>
+				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('partners')" href="#partners">{{$t('nav.partners')}}</a></li>
+				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('contact')" href="#contact">{{$t('nav.contact')}}</a></li>
 			</ul>
 			<div class="header__lang" v-bind:class="{scrol: hasBG }">
 				<SwitchesLanguages/>

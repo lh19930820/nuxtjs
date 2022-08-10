@@ -24,45 +24,39 @@ export default {
     dir: 'public'
   }
 ,
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-
-  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
 	'@nuxt/image',
-	'@nuxtjs/i18n'
+	[
+		"@nuxtjs/i18n",
+		{
+		  lazy: true,
+		  langDir: "lang/",
+		  locales: [
+			{
+			  code: "en",
+			  name: "English",
+			  file: "en.json"
+			},
+			{
+			  code: "vn",
+			  name: "Viet Nam",
+			  file: "vn.json"
+			}
+		  ]
+		}
+	  ]
   ],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
   buildModules: [
-    // Next Image module https://image.nuxtjs.org/components/nuxt-img
     ['@nuxt/image', {
         provider: 'static',
         dir: "assets/images",
     }],
 ],
-  i18n: {
-	locales: [
-	  {
-		code: 'en',
-		file: 'en.js'
-	  },
-	  {
-		code: 'vn',
-		file: 'vn.js'
-	  }
-	]
 
-  }
 }

@@ -3,16 +3,16 @@
 		<div class="container">
 			<div class="about-us__inner">
 				<div class="about-us__content">
-					<h3 class="c-title">About Us</h3>
-					<p class="about-us__description">Browse our selection of free online games and have a great time without leaving the site! Our Kids Games option also includes game reviews, extensive game cheats and walkthroughs, and much more. We have exclusive free downloads, videos, and articles as well. Etech reviews the most popular kids games from all the most popular video gaming platforms, so you don’t need to search around for fun anywhere else on the Internet. Explore a whole new world of gaming on Etech.</p>
+					<h3 class="c-title">{{$t('about.title')}}</h3>
+					<p class="about-us__description">{{$t('about.text')}}</p>
 					<div class="status">
 						<div class="status-item">
 							<div class="status-item__number">600<span>M</span>+</div>
-							<span class="status-item__name">Users</span>
+							<span class="status-item__name">{{$t('status.users')}}</span>
 						</div>
 						<div class="status-item">
 							<span class="status-item__number">135+</span>
-							<span class="status-item__name">Games</span>
+							<span class="status-item__name">{{$t('status.games')}}</span>
 						</div>
 					</div>
 				</div>
@@ -22,22 +22,22 @@
 							<li class="benefit-item">
 								<div class="benefit-item__img"><img src="~/assets/images/calendar-tick.svg" alt=""></div>
 								<div class="benefit-item__content">
-									<p class="benefit-item__ttl">24 - Hour</p>
-									<p class="benefit-item__txt">24/7 access ensures operators' businesses runs smoothly all year long.</p>
+									<p class="benefit-item__ttl"> {{$t('benefits.benefit[0].title')}}</p>
+									<p class="benefit-item__txt"> {{$t('benefits.benefit[0].text')}}</p>
 								</div>
 							</li>
 							<li class="benefit-item">
 								<div class="benefit-item__img"><img src="~/assets/images/pen-tool-2.svg" alt=""></div>
 								<div class="benefit-item__content">
-									<p class="benefit-item__ttl">Design</p>
-									<p class="benefit-item__txt">Combining imaginative universes, play dynamics, and unprecedented gameplay, our games transcend the boundaries of the virtual world by weaving innovative gameplay.</p>
+									<p class="benefit-item__ttl"> {{$t('benefits.benefit[1].title')}}</p>
+									<p class="benefit-item__txt"> {{$t('benefits.benefit[1].text')}}</p>
 								</div>
 							</li>
 							<li class="benefit-item">
 								<div class="benefit-item__img"><img src="~/assets/images/people.svg" alt=""></div>
 								<div class="benefit-item__content">
-									<p class="benefit-item__ttl">Team</p>
-									<p class="benefit-item__txt">Etech is an award-winning, international studio of designers, artists, animators and producers that create content for the biggest names in film and video games. </p>
+									<p class="benefit-item__ttl"> {{$t('benefits.benefit[2].title')}}</p>
+									<p class="benefit-item__txt"> {{$t('benefits.benefit[2].text')}}</p>
 								</div>
 							</li>
 						</ul>

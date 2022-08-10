@@ -2,12 +2,12 @@
 	<section class="mv" ref="mv">
 		<div class="mv__container">
 			<div class="mv__content">
-				<h1 class="mv__ttl">We’re<br class="sp"/> Getting Ready</h1>
+				<h1 class="mv__ttl" v-html="$t('mainvisual.title')"></h1>
 				<div class="mv__coundown">
 					<CountDownTime/>
 				</div>
 				<div class="mv__form">
-					<p class="mv__caption">We will back to something amazing. Getting the latest updates about our games. Please sign up to our newsletter.</p>
+					<p class="mv__caption">{{$t('mainvisual.caption')}}</p>
 					<Form/>
 				</div>
 			</div>
