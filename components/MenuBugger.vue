@@ -1,10 +1,24 @@
 <template>
-	<button class="p-menu-bugger" id="js-menu" aria-label="open navigation" v-bind:class="{active: isShow}" @click="handleMenuBugger">
+	<button class="p-menu-bugger" id="js-menu" aria-label="open navigation" :class="{active: showMenu}" @click="$emit('func');">
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	</button>
 </template>
+
+<script>
+
+export default {
+	props: ["showMenu"],
+    methods: {
+		handleMenuBugger: function () {
+			this.isShow=!this.isShow;
+			document.body.classList.toggle('hide-scroll')
+			document.querySelector('#js-menucontent').classList.toggle('active')
+		},
+    },
+}
+</script>
 <style lang="scss">
 .p-menu-bugger {
 	display: none;
@@ -77,22 +91,3 @@
 }
 
 </style>
-<script>
-
-export default {
-	data() {
-		return {
-			isShow: false,
-		}
-	},
-
-    methods: {
-		handleMenuBugger: function () {
-			this.isShow=!this.isShow;
-			document.body.classList.toggle('hide-scroll')
-			document.querySelector('#js-menucontent').classList.toggle('active')
-		},
-    },
-}
-</script>
-

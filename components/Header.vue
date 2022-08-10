@@ -1,19 +1,19 @@
 
 <template>
-	<header class="header" ref="refHeader" id="js-header" v-bind:class="{hasBackGround: hasBG }">
+	<header class="header" ref="header" id="js-header" :class="{hasBackGround: hasBG }">
 		<a class="header__logo" href="/">
 			<nuxt-img src="/white-logo.svg" alt="logo" placeholder />
 			<!-- <img src="~/assets/images/white-logo.svg" alt=""> -->
 		</a>
-		<MenuBugger/>
-		<div class="header__direction" id="js-menucontent">
+		<MenuBugger :showMenu="showMenu" @func="showMenu = !showMenu" />
+		<div class="header__direction" :class="{active: showMenu}" id="js-menucontent">
 			<ul class="header__nav">
 				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('about-us')" href="#about-us">{{$t('nav.about')}}</a></li>
 				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('games')" href="#games">{{$t('nav.games')}}</a></li>
 				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('partners')" href="#partners">{{$t('nav.partners')}}</a></li>
 				<li class="header__nav-item"><a class="js-anchor" @click.prevent="handleClick('contact')" href="#contact">{{$t('nav.contact')}}</a></li>
 			</ul>
-			<div class="header__lang" v-bind:class="{scrol: hasBG }">
+			<div class="header__lang" :class="{scrol: hasBG }">
 				<SwitchesLanguages/>
 			</div>
 		</div>
@@ -43,15 +43,24 @@ import MenuBugger from './MenuBugger.vue';
         },
         handleClick: function (refName) {
             const element = document.getElementById(refName);
-            var headerHeight = $this.refs.refHeader.offsetHeight;
+            var headerHeight = this.$refs.header.offsetHeight;
             if (element.offsetTop) {
                 window.scrollTo({
                     top: element.offsetTop - headerHeight,
                     behavior: "smooth",
                 });
             }
+			console.log(this.showMenu)
+			this.showMenu = !this.showMenu;
+			console.log(this.showMenu)
         }
+
     },
+	watch:{
+		showMenu(){
+			this.showMenu? document.body.classList.add('hide-scroll'): document.body.classList.remove('hide-scroll')
+		}
+	},
     components: { MenuBugger }
 }
 </script>
