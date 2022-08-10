@@ -1,6 +1,6 @@
 <template>
-    <div class="lang">
-		<button class="lang__btn lang__btn-active" @click="showSelectLang = !showSelectLang">
+    <div class="lang" v-click-outside="handlerClose">
+		<button class="lang__btn" @click="showSelectLang = !showSelectLang">
 			<span class="flag" :class="[$i18n.locale]"></span>
 		</button>
 		<ul class="lang__list" :class="{ show: showSelectLang }" >
@@ -16,13 +16,24 @@
     </div>
 </template>
 <script>
+import Vue from 'vue'
+import vClickOutside from 'v-click-outside'
 
+Vue.use(vClickOutside)
 export default {
+	directives: {
+      clickOutside: vClickOutside.directive
+    },
     data() {
         return {
 			showSelectLang: false,
         }
-    }
+    },
+	methods: {
+		handlerClose: function () {
+			this.showSelectLang= false
+		},
+    },
 }
 </script>
 <style lang="scss">
@@ -90,10 +101,22 @@ export default {
 				margin-right: 7px;
 			}
 		}
-		.lang__btn-active{
+		.lang__btn{
 			background: none;
 			position: relative;
 			height: 40px;
+			padding: 3px;
+			width: 100%;
+			border: none;
+			display: flex;
+			align-items: center;
+			border-radius: 8px;
+			cursor: pointer;
+			@media screen and (max-width: 768px) {
+				padding: 3px 38px 3px 14px;
+				background: #F6F6F6;
+				border: 1px solid #AFAFAF;
+			}
 			&:before{
 				content: "";
 				position: absolute;
@@ -107,29 +130,6 @@ export default {
 					border-top-color: #000;
 					right: 12px
 				}
-			}
-		}
-
-		&__select{
-			position: absolute;
-			top: 100%;
-			width: 100%;
-			left: 0
-		}
-		&__btn{
-			padding: 3px;
-			background-color: #fff;
-			height: 40px;
-			width: 100%;
-			border: none;
-			display: flex;
-			align-items: center;
-			border-radius: 8px;
-			cursor: pointer;
-			@media screen and (max-width: 768px) {
-				padding: 3px 38px 3px 14px;
-				background: #F6F6F6;
-				border: 1px solid #AFAFAF;
 			}
 		}
 	}
